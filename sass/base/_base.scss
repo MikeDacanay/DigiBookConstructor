@@ -20,6 +20,7 @@ html {
   max-width: 1600px;
   margin: 0 auto;
   background-color: grey;
+  overflow: visible;
   @include artboard-top-center;
   // @include bpx(1400,799){
   //   font-size: 94%;

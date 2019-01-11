@@ -32,20 +32,21 @@
 .page {
 	position: relative;
   width: 70.00rem;
-  height: 789px;
+  height: 1789px;
   // height: auto;
   background-repeat: no-repeat;
   background-size: cover !important;
-	@include bp(1053){
-		@include platformMobile;
-    padding-top: 2.90rem;
-	}
-	@include bp(800){
-		padding-top: 2.07rem;
-	}
-	@include bp(767){
-	 	@include platformPhone;
-	}
+	flex-direction: column;  
+	// @include bp(1053){
+	// 	@include platformMobile;
+ //    padding-top: 2.90rem;
+	// }
+	// @include bp(800){
+	// 	padding-top: 2.07rem;
+	// }
+	// @include bp(767){
+	//  	@include platformPhone;
+	// }
 }
 
 .chap-name{
@@ -117,6 +118,7 @@ a{
     display: flex;
     justify-content: center;
     position: relative;
+    border-bottom: 3px solid black;
 		&--1{
 			padding-top: 2.9rem;
 		}
