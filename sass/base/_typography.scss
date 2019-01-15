@@ -127,15 +127,22 @@ textarea {
   font-family: $font-arial;
   font-weight: 700;
   font-size: $big-font-size-1;
+  opacity: 0;
+  transform: translateX(2.50rem);
+  transition: all 1s ease-out;
 
+  &.fade-in{
+    opacity: 1;
+    transform: translateX(0);
+  }
   &--1{
-
+    font-size: 2.10rem;
   }  
 }
 
 .pg{
   font-size: $reg-font-size-1;
-  line-height: 1.5em;
+  line-height: 1.2em;
   margin-top: 1.05rem;
 }
 

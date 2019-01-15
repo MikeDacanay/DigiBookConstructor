@@ -71,6 +71,29 @@ $(document).ready(function() {
         ]
     });
 
+    // Init ScrollMagic
+    var scmController = new ScrollMagic.Controller();
+
+    $('.header').each(function(){
+
+        var ourScene = new ScrollMagic.Scene({
+            triggerElement: this, //sets trigger on the div
+            // triggerElement: this.children[0], //sets trigger on the image       
+            // duration: '60%', // this is 100% of the viewport height
+            triggerHook: .7, //this manipulates 'trigger scene'
+            reverse: false, //prevents reanimating after triggering
+        })
+        .setClassToggle(this, 'fade-in') // add class to project01
+        .addIndicators({
+            name: 'fade scene',
+            colorTrigger: 'black',
+            colorStart: 'orangered',
+            colorEnd: 'pink'
+        }) //this require plugin.. this is for debug
+        .addTo(scmController);     
+
+    });    
+
 
     $('.icon-wrap').click(function(){
         $('.icon-wrap').toggleClass('hoverish');
@@ -135,48 +158,9 @@ $(document).ready(function() {
         $('body').css('height', window.innerHeight);
         $('.book-slider').slick('unslick');
 
-        // Move footnotes at bottom of page  
-        for(let i=1; i<12; i++){
-            $(".footnote__"+i).detach().appendTo('.footnote-container__t'+i);
-        }
-
-        // Replace superscripts on footnotes
-        for(let i=2; i<5; i++){
-            $(".sup__change-1--"+i).text(i);
-        }
-        for(let i=2; i<5; i++){
-            $(".sup__change-2--"+i).text(i);
-        }
-        $(".sup__change-3--1").text(5);
-        $(".sup__change-3--2").text(6);
-                
         $("#mobile-page-1").detach().appendTo('.page--p3 .content-holder');
 
-        $("#mobile-page-2").detach().appendTo('.page--p5 .content-holder');
-        $("#mobile-page-3").detach().appendTo('.page--p5 .content-holder');
-        $("#mobile-page-4").detach().appendTo('.page--p5 .content-holder');
-
-        $("#mobile-page-5").detach().appendTo('.page--p9 .content-holder');
-        $("#mobile-page-6").detach().appendTo('.page--p9 .content-holder');
-        $("#mobile-page-7").detach().appendTo('.page--p9 .content-holder');
-        $("#mobile-page-8").detach().appendTo('.page--p9 .content-holder');
-        $("#mobile-page-9").detach().appendTo('.page--p9 .content-holder');
-
-        $("#mobile-page-10").detach().appendTo('.page--p15 .content-holder');
-
-        $(".page--p4").remove();
-
-        $(".page--p6").remove();
-        $(".page--p7").remove(); 
-        $(".page--p8").remove();
-
-        $(".page--p10").remove();
-        $(".page--p11").remove();
-        $(".page--p12").remove();
-        $(".page--p13").remove();
-        $(".page--p14").remove();   
-
-        $(".page--p16").remove();               
+        $(".page--p4").remove();          
 
         $('.book-slider').slick({
             infinite: false,
@@ -199,9 +183,6 @@ $(document).ready(function() {
 
         if($('body').width() <768) {
 
-            for(let i=1; i<12; i++){
-                $(".footnote__"+i).detach().appendTo('.footnote-container__'+i);
-            }
         }
 
     }
